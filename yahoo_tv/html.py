@@ -19,10 +19,6 @@ class Html:
         self.__page_source = ""
 
     def get(self, url: str):
-        selenium_logger = logging.getLogger(
-            '')
-        selenium_logger.setLevel(logging.DEBUG)
-
         options = Options()
         options.headless = True
         options.add_argument("--log-level=3")
