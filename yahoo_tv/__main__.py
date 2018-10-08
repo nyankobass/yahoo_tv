@@ -12,7 +12,7 @@ import yahoo_tv
 
 
 @click.command()
-@click.option("--pref-code", "-p", type=int, help="都道府県番号", required=True, default=35)
+@click.option("--pref-code", "-p", type=int, help="都道府県番号", default=35)
 @click.option("--pref-list", is_flag=True, help="エリア一覧を表示する")
 @click.option("--station-list", is_flag=True, help="放送局一覧を表示する")
 @click.option("--station", "-s", type=str, help="放送局名")
@@ -45,8 +45,6 @@ def main(pref_code, pref_list, station_list, station, date, time, chrome):
         except:
             print("時間のフォーマットが正しくありません。(0-23)")
             sys.exit(1)
-
-    print(dt)
 
     if datetime.datetime.today() > dt:
         print("過去の番組表は取得できません。")
