@@ -46,11 +46,11 @@ def main(pref_code, pref_list, station_list, station, date, time, chrome):
             print("時間のフォーマットが正しくありません。(0-23)")
             sys.exit(1)
 
-    if datetime.datetime.today() > dt:
+    if today > dt:
         print("過去の番組表は取得できません。")
         sys.exit(1)
 
-    elif datetime.datetime.today() + datetime.timedelta(weeks=1) < dt:
+    elif today + datetime.timedelta(weeks=1) < dt:
         print("一週間以上先の番組表は取得できません。")
         sys.exit(1)
 
