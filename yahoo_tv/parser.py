@@ -159,6 +159,9 @@ class Parser:
         ROW_URL = r"https://tv.yahoo.co.jp/listings/?&va=24&vb=0&vc=0&vd=0&ve=0"
 
         url = ROW_URL + "&a=" + \
-            str(self.__pref_code) + "&st=" + str(self.__start_dt.hour)
+            str(self.__pref_code) + "&st=" + str(self.__start_dt.hour) + \
+            "&d=" + self.__start_dt.strftime(r"%Y%m%d")
+
+        print(url)
 
         return url
