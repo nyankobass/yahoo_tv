@@ -10,7 +10,7 @@ seleniumを使ってYahoo TVにアクセスし、番組表を取得する
 * ChromeDriver
 
 # Install
-`git clone`した後  
+`$ git clone`した後  
 `$ python setup develop`
 
 selniumを利用するため、ChromeDriverを適切なディレクトリに保存する。  
