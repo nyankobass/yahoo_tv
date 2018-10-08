@@ -23,11 +23,15 @@ class Html:
         options.headless = True
         options.add_argument("--log-level=3")
 
-        if self.__chromedriver_path is None:
-            driver = webdriver.Chrome(options=options)
-        else:
-            driver = webdriver.Chrome(
-                self.__chromedriver_path, chrome_options=options)
+        try:
+            if self.__chromedriver_path is None:
+                driver = webdriver.Chrome(options=options)
+            else:
+                driver = webdriver.Chrome(
+                    self.__chromedriver_path, chrome_options=options)
+        except:
+            print("ChromeDownloderのパスを正しく設定してください。(--chrome, -c)")
+            return
 
         driver.set_page_load_timeout(30)
 

@@ -12,7 +12,7 @@ import urllib.request
 from bs4 import BeautifulSoup
 from bs4.element import Tag
 
-from yahoo_tv.html import Html
+from yahoo_tv.html_downloader import Html
 from yahoo_tv.program_data import ProgramData
 from yahoo_tv.schedule import Schedule
 
@@ -161,7 +161,5 @@ class Parser:
         url = ROW_URL + "&a=" + \
             str(self.__pref_code) + "&st=" + str(self.__start_dt.hour) + \
             "&d=" + self.__start_dt.strftime(r"%Y%m%d")
-
-        print(url)
 
         return url
