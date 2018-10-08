@@ -17,13 +17,8 @@ class Schedule:
     def get_all_station(self):
         return self.__station_list.copy()
 
-    def get_prgrams(self, station_name: str):
-        if not any(station == station_name for station in self.__station_list):
-            return None
-
-        ch_num = self.__station_list.index(station_name) - 1
-
-        programs = filter(lambda n: n.ch_num ==
-                          ch_num, self.__program_data_list)
+    def get_prgrams(self, station: str) -> List[ProgramData]:
+        programs = filter(lambda n: n.station == station,
+                          self.__program_data_list)
 
         return programs
