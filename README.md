@@ -27,10 +27,10 @@ http://chromedriver.chromium.org/downloads
 `$ python -m yahoo_tv -p 23 --station-list -c [chromedriver.exeへのPATH]`
 
 * 現在から24時間分の番組表を取得する  
-`$ python -m yahoo_tv -p 23 -c "D:\chromedriver.exe`
+`$ python -m yahoo_tv -p 23 -c [chromedriver.exeへのPATH]`
 
 * 指定した放送局の現在から24時間分の番組表を取得する  
-`$ python -m yahoo_tv -p 23 -s テレビ東京 -c "D:\chromedriver.exe`
+`$ python -m yahoo_tv -p 23 -s テレビ東京 -c [chromedriver.exeへのPATH]`
 
 * 指定した日付の番組表を取得する  
-`$ python -m yahoo_tv -p 23 -d 2018-10-12 -s テレビ東京 -c "D:\chromedriver.exe`
+`$ python -m yahoo_tv -p 23 -d 2018-10-12 -s テレビ東京 -c [chromedriver.exeへのPATH]`
