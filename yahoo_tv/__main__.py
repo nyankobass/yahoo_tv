@@ -91,7 +91,6 @@ def show_programs(schedule: yahoo_tv.Schedule, station: str):
     programs = schedule.get_prgrams(station)
 
     if programs is None:
-        print("指定された放送局は存在しません。")
         return 1
 
     for program in programs:

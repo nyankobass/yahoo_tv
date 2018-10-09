@@ -6,6 +6,9 @@ program_data.api
 """
 
 import datetime
+import logging
+
+LOGGER = logging.getLogger(__name__)
 
 
 class ProgramData:

@@ -5,8 +5,11 @@ program_data.api
 :license: MIT, see LICENSE for more details.
 """
 from typing import List
+import logging
 
 from yahoo_tv.program_data import ProgramData
+
+LOGGER = logging.getLogger(__name__)
 
 
 class Schedule:
@@ -35,7 +38,7 @@ class Schedule:
         '''
 
         if not any(station == s for s in self.__station_list):
-            print("指定された放送局は存在しません。")
+            LOGGER.error("指定された放送局は存在しません。")
             return None
 
         programs = filter(lambda n: n.station == station,
