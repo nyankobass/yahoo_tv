@@ -1,5 +1,5 @@
 """
-html.api
+html_downloader.api
 ~~~~~~~~~~~~
 :copyright: (c) 2018 by nyankobass.
 :license: MIT, see LICENSE for more details.
@@ -30,7 +30,7 @@ class Html:
                 driver = webdriver.Chrome(
                     self.__chromedriver_path, chrome_options=options)
         except:
-            print("ChromeDownloderのパスを正しく設定してください。(--chrome, -c)")
+            LOGGER.error("ChromeDownloderのパスを正しく設定してください。(--chrome, -c)")
             return
 
         driver.set_page_load_timeout(30)
