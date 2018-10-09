@@ -12,7 +12,7 @@ import yahoo_tv
 
 
 @click.command()
-@click.option("--pref-code", "-p", type=int, help="都道府県番号", default=35)
+@click.option("--pref-code", "-p", type=int, help="都道府県番号", default=23)
 @click.option("--pref-list", is_flag=True, help="エリア一覧を表示する")
 @click.option("--station-list", is_flag=True, help="放送局一覧を表示する")
 @click.option("--station", "-s", type=str, help="放送局名")
