@@ -42,7 +42,8 @@ import datetime
   
 import yahoo_tv  
   
-chromedriver = "D:\chromedriver.exe"  
+# chromedriver.exe へのパス
+chromedriver = ""  
   
 tv = yahoo_tv.API(chromedriver)  
   
