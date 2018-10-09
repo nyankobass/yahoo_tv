@@ -36,7 +36,7 @@ http://chromedriver.chromium.org/downloads
 `$ python -m yahoo_tv -p 23 -d 2018-10-12 -s テレビ東京 -c [chromedriver.exeへのPATH]`
 
 # Sample Code
-```
+```py
 import sys  
 import datetime  
   
