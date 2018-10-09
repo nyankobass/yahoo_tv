@@ -20,7 +20,7 @@ except IOError:
 
 setup(
     name='yahoo_tv',
-    version='0.1.1',
+    version='1.0.0',
     description='Getting TV schedule for Yahoo TV',
     long_description=readme,
     author='nyankobass',

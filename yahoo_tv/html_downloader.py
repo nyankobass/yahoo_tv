@@ -1,5 +1,5 @@
 """
-html.api
+html_downloader.api
 ~~~~~~~~~~~~
 :copyright: (c) 2018 by nyankobass.
 :license: MIT, see LICENSE for more details.

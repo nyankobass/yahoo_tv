@@ -46,14 +46,6 @@ def main(pref_code, pref_list, station_list, station, date, time, chrome):
             print("時間のフォーマットが正しくありません。(0-23)")
             sys.exit(1)
 
-    if today > dt:
-        print("過去の番組表は取得できません。")
-        sys.exit(1)
-
-    elif today + datetime.timedelta(weeks=1) < dt:
-        print("一週間以上先の番組表は取得できません。")
-        sys.exit(1)
-
     tv = yahoo_tv.API(chromedriver_path=chrome)
     schedule = tv.get_schedule(pref_code, dt)
 
@@ -82,7 +74,7 @@ def show_pref_code_list():
     return 0
 
 
-def show_station_list(schedule: yahoo_tv.schedule.Schedule):
+def show_station_list(schedule: yahoo_tv.Schedule):
     station_list = schedule.get_all_station()
 
     if not station_list:
@@ -95,10 +87,10 @@ def show_station_list(schedule: yahoo_tv.schedule.Schedule):
     return 0
 
 
-def show_programs(schedule: yahoo_tv.schedule.Schedule, station: str):
+def show_programs(schedule: yahoo_tv.Schedule, station: str):
     programs = schedule.get_prgrams(station)
 
-    if not programs:
+    if programs is None:
         print("指定された放送局は存在しません。")
         return 1
 
@@ -108,7 +100,7 @@ def show_programs(schedule: yahoo_tv.schedule.Schedule, station: str):
     return 0
 
 
-def show_all_programs(schedule: yahoo_tv.schedule.Schedule):
+def show_all_programs(schedule: yahoo_tv.Schedule):
     station_list = schedule.get_all_station()
 
     if not station_list:
@@ -118,6 +110,9 @@ def show_all_programs(schedule: yahoo_tv.schedule.Schedule):
     for station in station_list:
         print("@@ " + station)
         programs = schedule.get_prgrams(station)
+
+        if programs is None:
+            continue
 
         for program in programs:
             print(program.format())
